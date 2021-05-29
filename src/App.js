@@ -1,25 +1,36 @@
 import React, {useState, useEffect} from 'react';
-import {Button, SafeAreaView, Text} from 'react-native';
+import {Button, SafeAreaView, Text, View} from 'react-native';
 
 const App = () => {
-  const [number, setNumber] = useState(0);
-  const [counter, setCounter] = useState(100);
+  const [helloFlag, setHelloFlag] = useState(true);
 
-useEffect(() => { 
-console.log("number updated");
-}, [number]);
-
-useEffect(() => { 
-  console.log("count updated");
-  }, [counter]);
+  function updateFlag() {
+    setHelloFlag(!helloFlag);
+  }
 
   return (
     <SafeAreaView>
       <Text>Hello Lifecycle</Text>
-      <Button title="Up!" onPress={() => setNumber(number + 1)} />
-      <Button title="CountUp!" onPress={() => setCounter(counter + 100)} />
+      <Button title="Up!" onPress={updateFlag} />
+      {helloFlag && <Hello />}
     </SafeAreaView>
   );
 };
 
 export default App;
+
+function Hello() {
+  useEffect(() => {
+    console.log('Merhaba Dünya!');
+
+    return () => {
+      console.log('Gidiyorum');
+    };
+  }, []);
+
+  return (
+    <View>
+      <Text>I'm Hello Component</Text>
+    </View>
+  );
+}
