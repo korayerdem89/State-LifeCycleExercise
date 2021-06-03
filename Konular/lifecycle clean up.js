@@ -1,3 +1,6 @@
+
+//LifeCycle Clean Up exercise/
+
 import React, {useState, useEffect} from 'react';
 import {Button, SafeAreaView, Text, View} from 'react-native';
 
