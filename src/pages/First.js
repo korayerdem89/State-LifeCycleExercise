@@ -5,9 +5,8 @@ import {View, Text, Button} from 'react-native';
 function First(props) {
   console.log(props);
     function navigateToPage() {
-        props.navigation.navigate('SecondScreen');
+        props.navigation.navigate('SecondScreen', {username:'koray'});
     }
-    
   return (
     <View>
       <Text>Hello First</Text>
