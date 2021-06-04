@@ -3,9 +3,11 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 
 function First(props) {
+  console.log(props);
     function navigateToPage() {
         props.navigation.navigate('SecondScreen');
     }
+    
   return (
     <View>
       <Text>Hello First</Text>
